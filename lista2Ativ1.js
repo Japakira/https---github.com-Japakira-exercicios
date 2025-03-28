@@ -11,32 +11,32 @@
 
 class Vec {
     constructor(x,y){
-        this._x = x;
-        this._y = y;
+        this.x = x;
+        this.y = y;
     }
     get distancia(){
-        return sqtr(Math.abs(this.x)*Math.abs(this.x) + Math.abs(this.y)*Math.abs(this.y));
+        return Math.sqrt((this.x*this.x)+(this.y*this.y));
     }
 
-    minus (){
-        xm = this._x - a;
-        ym = this._y - b;
-        return xm, ym;
+    minus (vec){
+        vect.x = this.x - vec.x;
+        vect.y = this.y - vec.y;
+        return vect;
     }
 
-    plus (a, b){
-        xm = this._x + a;
-        ym = this._y + b;
-        return xm, ym;
+    plus (vec){
+        vect = new Vec();
+        vect.x = this.x + vec.x;
+        vect.y = this.y + vec.y;
+        return vect;
     }
 }
 
-vec1 = new Vec.constructor(5,7);
-vec2 = new Vec.constructor(1,3);
+vec1 = new Vec(3,4);
+vec2 = new Vec(9,12);
+vect = new Vec(null,null);
 
-console.log(vec1);
-
-console.log(vec1.minus(vec2.x, vec2.y));
-console.log(vec1.plus(vec2.x, vec2.y));
-console.log(vec1.distancia());
-console.log(vec2.distancia());
+console.log(vec1.minus(vec2));
+console.log(vec1.plus(vec2));
+console.log(vec1.distancia);
+console.log(vec2.distancia);
